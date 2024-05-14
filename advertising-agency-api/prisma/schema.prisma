@@ -20,20 +20,17 @@ model User {
   login String @unique
   passwordCash String
   role  String?
-  posts Post[]
 }
 
 model Post {
   id Int @id @default(autoincrement())
-  author User @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
   userId Int
-  shifts Shift[]
   adressId Int
 }
 
 model Shift {
   id Int @id @default(autoincrement())
-  reference Post @relation(fields: [postId], references: [id])
   postId Int
   isOpen Boolean
   createdAt DateTime @default(now())

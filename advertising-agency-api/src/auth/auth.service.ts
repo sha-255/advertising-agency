@@ -23,4 +23,11 @@ export class AuthService {
       access_token: await this.jwtService.signAsync(playload),
     };
   }
+
+  async registrate(username: string, pass: string) {
+    await this.userService.add({
+      login: username,
+      passwordCash: pass,
+    } as User);
+  }
 }

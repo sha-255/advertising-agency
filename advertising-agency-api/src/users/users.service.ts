@@ -7,16 +7,16 @@ export class UsersService {
   constructor(private readonly databaseService: DatabaseService) {}
 
   async onModuleInit() {
+    console.log(await this.databaseService.user.findMany());
     if (await this.findOne('qwe')) return;
-    this.databaseService.user.create({
+    await this.databaseService.user.create({
       data: {
-        id: 0,
         login: 'qwe',
         passwordCash: 'ewq',
-        role: 'User',
-        posts: null,
+        role: 'Admin',
       },
     });
+    console.log(await this.databaseService.user.count());
   }
 
   async findOne(login: string): Promise<User> {
@@ -25,5 +25,26 @@ export class UsersService {
         login: login,
       },
     })) as User;
+  }
+
+  async add(user: User) {
+    await this.databaseService.user.create({
+      data: {
+        login: user.login,
+        passwordCash: user.passwordCash,
+        role: user.role,
+      },
+    });
+  }
+
+  async update(user: User) {
+    await this.databaseService.user.update({
+      where: { id: user.id },
+      data: {
+        login: user.login,
+        passwordCash: user.passwordCash,
+        role: user.role,
+      },
+    });
   }
 }
