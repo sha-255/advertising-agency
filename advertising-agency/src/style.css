@@ -322,6 +322,7 @@ button:focus-visible {
 }
 
 .center {
+  margin: auto;
   place-items: center;
   justify-content: center;
   text-align: center;
@@ -333,4 +334,8 @@ button:focus-visible {
 
 .arrow {
   scale: 4;
+}
+
+.mga {
+  margin: auto;
 }

@@ -5,7 +5,7 @@
         <router-link :to="'/'">
           <arrow-up class="logo arrow" />
         </router-link>
-        <div class="tagline mr center">Создание аккаунта</div>
+        <div class="tagline mr center mga">Создание аккаунта</div>
       </div>
       <input type="text" placeholder="Логин" class="input mr" />
       <input type="password" placeholder="Пароль" class="input mr" />

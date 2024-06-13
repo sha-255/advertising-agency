@@ -1,0 +1,99 @@
+<!-------------------------------------------------------------------->
+      <!-------------------------------------------------------------------->
+      <div class="tiket">
+        <div class="content-body">
+          <span class="VPNavBarMenuLink" style="font-size: large">Иван</span>
+          <span>Проспект Карла Маркса</span>
+        </div>
+        <hr />
+        <div class="shift">
+          <h3>Открытие смены</h3>
+          <span class="description">Описание отсутствует</span>
+          <img
+            src="https://i.imgur.com/b7vk4aj.png"
+            alt="shift photo"
+            style="width: 500px"
+          />
+          <span class="date-time">12:43:43</span>
+        </div>
+        <hr />
+        <div class="shift">
+          <h3>Закрытие смены</h3>
+          <span class="description">Описание отсутствует</span>
+          <img
+            src="https://i.imgur.com/VWEDW5V.png"
+            alt="shift photo"
+            style="width: 500px"
+          />
+          <span class="date-time">17:45:54</span>
+        </div>
+        <hr />
+        <span class="date-time">13.05.2024</span>
+      </div>
+      <!-------------------------------------------------------------------->
+      <!-------------------------------------------------------------------->
+      <div class="tiket">
+        <div class="content-body">
+          <span class="VPNavBarMenuLink" style="font-size: large">Роман</span>
+          <span>Улица 10 лет Октября, 70</span>
+        </div>
+        <hr />
+        <div class="shift">
+          <h3>Открытие смены</h3>
+          <span class="description">Описание отсутствует</span>
+          <img
+            src="https://i.imgur.com/eWCVGFy.png"
+            alt="shift photo"
+            style="width: 500px"
+          />
+          <span class="date-time">09:00:10</span>
+        </div>
+        <hr />
+        <div class="shift">
+          <h3>Закрытие смены</h3>
+          <span class="description">Часть листовок промокла под дождём.</span>
+          <img
+            src="https://i.imgur.com/xFj4vla.png"
+            alt="shift photo"
+            style="width: 500px"
+          />
+          <span class="date-time">17:00:12</span>
+        </div>
+        <hr />
+        <span class="date-time">17.05.2024</span>
+      </div>
+      <!-------------------------------------------------------------------->
+      <!-------------------------------------------------------------------->
+      <div class="tiket">
+        <div class="content-body">
+          <span class="VPNavBarMenuLink" style="font-size: large">Максим</span>
+          <span>Проспект Карла Маркса</span>
+        </div>
+        <hr />
+        <div class="shift">
+          <h3>Открытие смены</h3>
+          <span class="description">Выдали малое количество листовок.</span>
+          <img
+            src="https://i.imgur.com/TPjxZ6c.png"
+            alt="shift photo"
+            style="width: 500px"
+          />
+          <span class="date-time">11:20:48</span>
+        </div>
+        <hr />
+        <div class="shift">
+          <h3>Закрытие смены</h3>
+          <span class="description"
+            >Пришлось долгое время простоять в пустую.</span
+          >
+          <img
+            src="https://i.imgur.com/BXtqmKv.png"
+            alt="shift photo"
+            style="width: 500px"
+          />
+          <span class="date-time">14:50:24</span>
+        </div>
+        <hr />
+        <span class="date-time">19.05.2024</span>
+      </div>
+      <!-------------------------------------------------------------------->

@@ -24,9 +24,14 @@ export default createRouter({
       component: () => import("./components/the-registration.vue"),
     },
     {
-      path: "/naebalivo",
-      name: "Naebalovo",
-      component: () => import("./components/naebalovo-page.vue"),
+      path: "/admin",
+      name: "Admin",
+      component: () => import("./components/admin-page.vue"),
+    },
+    {
+      path: "/user",
+      name: "User",
+      component: () => import("./components/user-page.vue"),
     },
   ],
 });

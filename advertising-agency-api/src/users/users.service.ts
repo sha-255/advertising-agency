@@ -13,7 +13,7 @@ export class UsersService {
       data: {
         login: 'qwe',
         passwordCash: 'ewq',
-        role: 'Admin',
+        role: 'admin',
       },
     });
     console.log(await this.databaseService.user.count());

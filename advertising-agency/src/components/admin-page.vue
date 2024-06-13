@@ -31,97 +31,19 @@
   </header>
   <div>
     <div class="tiket-container">
-      <div class="tiket">
+      <div class="tiket" v-for="post in posts" :key="post.id">
         <div class="content-body">
-          <span class="VPNavBarMenuLink" style="font-size: large">Иван</span>
-          <span>Проспект Карла Маркса</span>
+          <span class="VPNavBarMenuLink" style="font-size: large">{{
+            post.id
+          }}</span>
+          <span>{{ post.address }}</span>
         </div>
         <hr />
-        <div class="shift">
-          <h3>Открытие смены</h3>
-          <span class="description">Описание отсутствует</span>
-          <img
-            src="https://i.imgur.com/b7vk4aj.png"
-            alt="shift photo"
-            style="width: 500px"
-          />
-          <span class="date-time">12:43</span>
-        </div>
+        <the-shift :postId="post.id"></the-shift>
         <hr />
-        <div class="shift">
-          <h3>Закрытие смены</h3>
-          <span class="description">Описание отсутствует</span>
-          <img
-            src="https://i.imgur.com/VWEDW5V.png"
-            alt="shift photo"
-            style="width: 500px"
-          />
-          <span class="date-time">17:45</span>
-        </div>
-        <hr />
-        <span class="date-time">13.05.2024</span>
-      </div>
-      <div class="tiket">
-        <div class="content-body">
-          <span class="VPNavBarMenuLink" style="font-size: large">Роман</span>
-          <span>Улица 10 лет Октября, 70</span>
-        </div>
-        <hr />
-        <div class="shift">
-          <h3>Открытие смены</h3>
-          <span class="description">Описание отсутствует</span>
-          <img
-            src="https://i.imgur.com/eWCVGFy.png"
-            alt="shift photo"
-            style="width: 500px"
-          />
-          <span class="date-time">09:00</span>
-        </div>
-        <hr />
-        <div class="shift">
-          <h3>Закрытие смены</h3>
-          <span class="description">Часть листовок промокла под дождём.</span>
-          <img
-            src="https://i.imgur.com/xFj4vla.png"
-            alt="shift photo"
-            style="width: 500px"
-          />
-          <span class="date-time">17:00</span>
-        </div>
-        <hr />
-        <span class="date-time">17.05.2024</span>
-      </div>
-      <div class="tiket">
-        <div class="content-body">
-          <span class="VPNavBarMenuLink" style="font-size: large">Максим</span>
-          <span>Проспект Карла Маркса</span>
-        </div>
-        <hr />
-        <div class="shift">
-          <h3>Открытие смены</h3>
-          <span class="description">Выдали малое количество листовок.</span>
-          <img
-            src="https://i.imgur.com/TPjxZ6c.png"
-            alt="shift photo"
-            style="width: 500px"
-          />
-          <span class="date-time">11:20</span>
-        </div>
-        <hr />
-        <div class="shift">
-          <h3>Закрытие смены</h3>
-          <span class="description"
-            >Пришлось долгое время простоять в пустую.</span
-          >
-          <img
-            src="https://i.imgur.com/BXtqmKv.png"
-            alt="shift photo"
-            style="width: 500px"
-          />
-          <span class="date-time">14:50</span>
-        </div>
-        <hr />
-        <span class="date-time">19.05.2024</span>
+        <span class="date-time">{{
+          post.createdAt.split("T")[0].replaceAll("-", " ")
+        }}</span>
       </div>
     </div>
   </div>
@@ -148,6 +70,24 @@
 //   id Int @id @default(autoincrement())
 //   content String
 // }
+import TheShift from "./the-shift.vue";
+import { onMounted, ref } from "vue";
+import { API_STR } from "../api/auth";
+
+onMounted(async () => {
+  await getPosts();
+});
+
+const posts = ref([]);
+
+const getPosts = async () => {
+  const raw = await fetch(API_STR + "posts");
+  posts.value = await raw.json();
+};
+
+// const getPostById = async (id) => {
+//   return await (await fetch("http://localhost/posts/" + id)).json();
+// };
 </script>
 
 <style scoped>
@@ -158,8 +98,10 @@
   padding: 10px;
 }
 
-h3 {
-  margin: 0;
+.shift {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .date-time {
@@ -171,6 +113,10 @@ h3 {
   margin: 0px 10px 0px 10px;
 }
 
+h3 {
+  margin: 0;
+}
+
 hr {
   width: 100%;
   display: block;
@@ -179,12 +125,6 @@ hr {
   border-top: 3px solid #242424;
   margin: 1em 0;
   padding: 0;
-}
-
-.shift {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .tiket-container {

@@ -17,6 +17,7 @@ datasource db {
 
 model User {
   id Int @id @default(autoincrement())
+
   login String @unique
   passwordCash String
   role  String?
@@ -25,20 +26,19 @@ model User {
 model Post {
   id Int @id @default(autoincrement())
   createdAt DateTime @default(now())
+
   userId Int
-  adressId Int
+
+  adress String
 }
 
 model Shift {
   id Int @id @default(autoincrement())
-  postId Int
-  isOpen Boolean
   createdAt DateTime @default(now())
+
+  postId Int
+  
+  isOpen Boolean
   description String?
   image String?
-}
-
-model Address {
-  id Int @id @default(autoincrement())
-  content String
 }

@@ -5,4 +5,4 @@ export class User {
   role: TypeRole;
 }
 
-type TypeRole = 'Admin' | 'User';
+type TypeRole = 'admin' | 'user';

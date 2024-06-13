@@ -1,4 +1,4 @@
-const API_STR = "http://localhost/";
+export const API_STR = "http://localhost/";
 
 export const signIn = async (login, password) => {
   const raw = await fetch(API_STR + "login", {
